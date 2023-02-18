@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="CueModel"
+            type="com.example.billiardshop.model.Cue" />
+    </data>
+    <LinearLayout
+        android:id="@+id/layout_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/define_dimen_10"
+        android:layout_marginEnd="@dimen/define_dimen_10"
+        android:onClick="@{CueModel::goToCueDetail}"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/define_dimen_6">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/define_dimen_120">
+
+                <ImageView
+                    android:id="@+id/img_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:normal_image="@{CueModel.image}"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvSaleOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/define_dimen_10"
+                    android:text="@{CueModel.getStringSale(tvSaleOff)}"
+                    android:visibility="@{CueModel.isSaleOff ? View.VISIBLE : View.GONE}"
+                    android:background="@color/red_80"
+                    android:padding="@dimen/define_dimen_6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_xsmall"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/define_dimen_6"
+            android:paddingEnd="@dimen/define_dimen_6"
+            android:paddingBottom="@dimen/define_dimen_6">
+
+            <TextView
+                android:id="@+id/tv_food_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_50"
+                android:textSize="@dimen/text_size_normal"
+                android:text="@{CueModel.name}"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_2"
+                android:text="@{CueModel.getStringOldPrice(tvPrice)}"
+                android:visibility="@{CueModel.isSaleOff ? View.VISIBLE : View.GONE}"
+                android:textColor="@color/black_50"
+                android:textSize="@dimen/text_size_xsmall"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_price_sale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_2"
+                android:textColor="@color/red_80"
+                android:text="@{CueModel.getStringRealPrice()}"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "235617918137",
+    "project_id": "germanshop-98077",
+    "storage_bucket": "germanshop-98077.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235617918137:android:16581a99795eafb5430f68",
+        "android_client_info": {
+          "package_name": "com.example.billiardshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235617918137-pj2b253oa54e93acki3mdlrn1od38eca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0Zlkdgnf0hmak6yhAqtq2L6bSAUBPHDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235617918137-pj2b253oa54e93acki3mdlrn1od38eca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

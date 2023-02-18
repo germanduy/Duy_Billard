@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="CueModel"
+            type="com.example.billiardshop.model.Cue" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/layout_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{CueModel::goToCueDetail}">
+      >
+
+        <ImageView
+            android:id="@+id/image_food"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            app:banner_image="@{CueModel.banner}"
+            />
+
+        <TextView
+            android:id="@+id/tvSaleOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/define_dimen_10"
+            android:background="@color/red_80"
+            android:padding="@dimen/define_dimen_6"
+            android:text="@{CueModel.getStringSale(tvSaleOff)}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xsmall"
+            android:textStyle="bold"
+            android:visibility="@{CueModel.isSaleOff ? View.VISIBLE : View.GONE}"
+            tools:ignore="RelativeOverlap" />
+    </RelativeLayout>
+</layout>
