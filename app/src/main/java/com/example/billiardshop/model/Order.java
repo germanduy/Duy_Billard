@@ -12,19 +12,19 @@ public class Order implements Serializable {
     private String phone;
     private String address;
     private int amount;
-    private String foods;
+    private String cue;
     private int payment;
 
     public Order() {
     }
 
-    public Order(long id, String name, String phone, String address, int amount, String foods, int payment) {
+    public Order(long id, String name, String phone, String address, int amount, String cue, int payment) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.amount = amount;
-        this.foods = foods;
+        this.cue = cue;
         this.payment = payment;
     }
 
@@ -68,12 +68,12 @@ public class Order implements Serializable {
         this.amount = amount;
     }
 
-    public String getFoods() {
-        return foods;
+    public String getCue() {
+        return cue;
     }
 
-    public void setFoods(String foods) {
-        this.foods = foods;
+    public void setCue(String foods) {
+        this.cue = foods;
     }
 
     public int getPayment() {

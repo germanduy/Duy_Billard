@@ -39,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 .title(getString(R.string.app_name))
                 .content(getString(R.string.msg_exit_app))
                 .positiveText(getString(R.string.action_ok))
-                .onPositive((dialog, which) -> MainActivity.this.finish())
+                .onPositive((dialog, which) -> {
+                    MainActivity.this.finish();
+                })
                 .negativeText(getString(R.string.action_cancel))
                 .cancelable(false)
                 .show();

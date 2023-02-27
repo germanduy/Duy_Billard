@@ -75,8 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/define_dimen_300"
                         android:scaleType="centerCrop"
-                        app:url_image="@{CueDetailViewModel.mCue.banner}"
-                       />
+                        app:url_image="@{CueDetailViewModel.mCue.banner}" />
 
                     <TextView
                         android:id="@+id/tv_sale_off"
